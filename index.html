@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="input-container">
+      <input type="text" name="task-input" id="task-input" class="task-input">
+      <button id="add-task__btn" class="add-task__btn">Add</button>
+    </div>
+    <div class="display-container">
+      <div class="task-column" id="all-tasks">
+        <h3 class="task-column__header">All tasks</h3>
+        <div class="task-items task-items__all" id="task-items__all"></div>
+      </div>
+      <div class="task-column" id="progress-tasks">
+        <h3 class="task-column__header">In progress</h3>
+        <div class="task-items task-items__progress" id="task-items__progress"></div>
+      </div>
+      <div class="task-column" id="finished-tasks">
+        <h3 class="task-column__header">Finished</h3>
+        <div class="task-items task-items__finished" id="task-items__finished"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

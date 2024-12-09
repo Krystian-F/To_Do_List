@@ -1,0 +1,69 @@
+html{
+  font-size: 62.5%;
+  box-sizing: border-box;  
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background-color: hsla(0, 0%, 95%, 1);
+  font-size: 1.6rem;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 160rem;
+  border: 2px solid hsla(0, 0%, 0%, 1);
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+.input-container{
+  width: 100%;
+  displaY: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.task-input{
+  width: 100%;
+  height: 2rem;
+  border-radius: .5rem;
+  padding: .5rem;
+}
+
+.add-task__btn{
+  width: 10rem;
+  height: 3rem;
+  border-radius: .5rem;
+  background-color: hsl(120, 40%, 50%);
+  color: hsla(0, 0%, 100%, 1);
+  cursor: pointer;
+}
+
+/* Display Container */
+.display-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.task-column{
+  width: calc((100% - 2rem) / 3);
+  border: 1px solid hsla(0, 0%, 0%, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  border-radius: .5rem;
+  padding-top: 1rem;
+}
