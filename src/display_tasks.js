@@ -12,16 +12,40 @@ let displayTasks = function () {
 
   let renderTasks = function (tasks) {
     tasks.forEach((task) => {
-      const taskElement = document.createElement('div');
-      taskElement.classList.add('task-item');
-      taskElement.textContent = task.taskText;
+      const taskHTML = `
+      <div 
+        class="task-item" 
+        draggable="true"
+        data-id="${task.id}"
+      >
+        <!-- Draggable Icon -->
+        <span task-item__draggable-icon;">☰</span>
+
+        <!-- Task Text -->
+        <span style="flex: 1;">${task.taskText}</span>
+
+        <!-- Buttons -->
+        <div class="task-item__buttons">
+          <button 
+            class="edit-button" 
+          >
+            Edit
+          </button>
+          <button 
+            class="delete-button" 
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    `;
 
       if (task.state === 'all_tasks') {
-        allTasksContainer.appendChild(taskElement);
+        allTasksContainer.innerHTML += taskHTML;
       } else if (task.state === 'in_progress') {
-        inProgressTasksContainer.appendChild(taskElement);
+        inProgressTasksContainer.innerHTML += taskHTML;
       } else if (task.state === 'finished') {
-        finishedTasksContainer.appendChild(taskElement);
+        finishedTasksContainer.innerHTML += taskHTML;
       }
     })
   }

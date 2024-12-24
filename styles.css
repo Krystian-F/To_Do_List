@@ -67,3 +67,53 @@ body{
   border-radius: .5rem;
   padding-top: 1rem;
 }   
+
+.task-items{
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: center;
+}
+
+.task-item{
+  border: 1px solid hsla(0, 0%, 0%, 1);
+  width: 95%;
+  height: 2rem;
+  padding: 1rem 1rem;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.task-item__draggable-icon{
+  cursor: grab; 
+  margin-right: 1rem;  
+}
+
+.task-item__buttons{
+  display: flex; 
+  gap: 1rem;
+}
+
+.edit-button{
+  padding: .5rem 1rem; 
+  border: none; 
+  border-radius: .3rem; 
+  background-color: #4CAF50; 
+  color: white; 
+  cursor: pointer;
+}
+
+.delete-button{
+  padding: .5rem 1rem; 
+  border: none; 
+  border-radius: .3rem; 
+  background-color: #f44336; 
+  color: white; 
+  cursor: pointer;
+}
