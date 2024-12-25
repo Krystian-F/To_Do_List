@@ -1,4 +1,5 @@
 import { displayTasks } from "./display_tasks.js";
+import { deleteTask } from "./delete_task.js";
 
 let newTask = function() {
   const textInput  = document.querySelector('.task-input');
@@ -21,18 +22,19 @@ let newTask = function() {
     console.log(newTask);
     dataDB.push(newTask);
     localStorage.setItem('localDB', JSON.stringify(dataDB));
+
+    displayTasks();  
+    deleteTask();
   }
  
   if(textInput && inputBtn) {
     inputBtn.addEventListener('click', () => {
     getTaskInput();
-    displayTasks();  
     }) 
 
     textInput.addEventListener('keydown', (e) => {
       if(e.key === 'Enter'){
         getTaskInput();
-        displayTasks();  
       }
     })
   }
