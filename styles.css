@@ -79,6 +79,7 @@ body{
 
 .task-item{
   border: 1px solid hsla(0, 0%, 0%, 1);
+  background-color: hsla(0, 100%, 100%, 1);
   width: 95%;
   height: 2rem;
   padding: 1rem 1rem;

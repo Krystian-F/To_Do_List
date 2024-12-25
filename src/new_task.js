@@ -1,8 +1,11 @@
+import { displayTasks } from "./display_tasks.js";
+
 let newTask = function() {
   const textInput  = document.querySelector('.task-input');
   const inputBtn = document.querySelector('.add-task__btn');  
 
-  let dataDB = JSON.parse(localStorage.getItem('localDB')) || [];
+  let dataDB = [];
+  dataDB = JSON.parse(localStorage.getItem('localDB')) || []
 
   const getTaskInput = () => {
     let newTaskInput = textInput.value.trim();
@@ -21,11 +24,15 @@ let newTask = function() {
   }
  
   if(textInput && inputBtn) {
-    inputBtn.addEventListener('click', getTaskInput)
+    inputBtn.addEventListener('click', () => {
+    getTaskInput();
+    displayTasks();  
+    }) 
 
     textInput.addEventListener('keydown', (e) => {
       if(e.key === 'Enter'){
         getTaskInput();
+        displayTasks();  
       }
     })
   }
