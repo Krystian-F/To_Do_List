@@ -1,10 +1,10 @@
 import { displayTasks } from "./display_tasks.js";
 
-let deleteTask = function () {
+const deleteTask = function () {
+  let dataDB = JSON.parse(localStorage.getItem("localDB")) || [];
 
   let attachDeleteListeners = function () {
     let deleteBtns = [...(document.querySelectorAll('.delete-button'))];
-    let dataDB = JSON.parse(localStorage.getItem('localDB')) || [];
 
     const removeElementById = function (tasks, taskId) {
       let index = tasks.findIndex( task => task.id === taskId);
@@ -27,6 +27,10 @@ let deleteTask = function () {
         let updatedDB =  removeElementById(dataDB, idForRemoval);
         console.log(updatedDB);
         localStorage.setItem('localDB', JSON.stringify(updatedDB));
+
+        if (dataDB.length === 0) {
+          localStorage.removeItem("localDB");
+        }
 
         displayTasks();
         attachDeleteListeners();

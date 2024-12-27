@@ -1,16 +1,15 @@
 import { displayTasks } from "./display_tasks.js";
 import { deleteTask } from "./delete_task.js";
+import { editTask } from "./edit_task.js";
 
-let newTask = function() {
+const newTask = function() {
   const textInput  = document.querySelector('.task-input');
   const inputBtn = document.querySelector('.add-task__btn');  
 
-  let dataDB = [];
-  dataDB = JSON.parse(localStorage.getItem('localDB')) || []
-
   const getTaskInput = () => {
+    let dataDB = JSON.parse(localStorage.getItem('localDB')) || []
     let newTaskInput = textInput.value.trim();
-    if (!getTaskInput) return;
+    if (!newTaskInput) return;
     let newTaskId = Date.now();
     let newTask = {
       id : newTaskId,
@@ -22,9 +21,10 @@ let newTask = function() {
     console.log(newTask);
     dataDB.push(newTask);
     localStorage.setItem('localDB', JSON.stringify(dataDB));
-
-    displayTasks();  
+    
+    displayTasks();
     deleteTask();
+    editTask();
   }
  
   if(textInput && inputBtn) {

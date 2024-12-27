@@ -1,4 +1,4 @@
-let displayTasks = function () {
+const displayTasks = function () {
   let dataDB = JSON.parse(localStorage.getItem('localDB')) || []; 
   const allTasksContainer = document.querySelector('.task-items__all');
   const inProgressTasksContainer = document.querySelector('.task-items__progress');
@@ -22,7 +22,7 @@ let displayTasks = function () {
         <span task-item__draggable-icon;">☰</span>
 
         <!-- Task Text -->
-        <span style="flex: 1;">${task.taskText}</span>
+        <span class="task-item__text">${task.taskText}</span>
 
         <!-- Buttons -->
         <div class="task-item__buttons">
