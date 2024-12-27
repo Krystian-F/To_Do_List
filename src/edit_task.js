@@ -1,9 +1,7 @@
 const editTask = function () {
   let dataDB = JSON.parse(localStorage.getItem('localDB')) || [];
 
-
-
-      let updateDB = function (tasks, taskId, newText) {
+    let updateDB = function (tasks, taskId, newText) {
         let task = tasks.find((task) => task.id === taskId);
         
         if (task) {
@@ -49,8 +47,8 @@ const editTask = function () {
           })
         })            
       }
-      
-      attachEditListeners();
+
+  attachEditListeners();
 }
 
 export {editTask}
